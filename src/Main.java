@@ -64,35 +64,65 @@
 
 
 // lab 3
+//import Lab3.Square;
+//import Lab2.Rectangle;
+//
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.println("Enter the top-left coordinates and side length of the square:");
+//        int xTopLeftCoordinate = scanner.nextInt();
+//        int yTopLeftCoordinate = scanner.nextInt();
+//        int sideLength = scanner.nextInt();
+//
+//        Square square = new Square(xTopLeftCoordinate, yTopLeftCoordinate, sideLength);
+//
+//        System.out.println("Площадь: " + square.getArea());
+//        System.out.println("Периметр: " + square.getPerimeter());
+//        System.out.println("Цвет: " + square.getColor());
+//        System.out.println("Закрашен: " + square.isFilled());
+//
+//        System.out.println("Enter the new color:");
+//        String newColor = scanner.next();
+//        square.setColor(newColor);
+//
+//        System.out.println("Цвет: " + square.getColor());
+//    }
+//}
+
+// Lab4
+
+
 import Lab3.Square;
 import Lab2.Rectangle;
-
+import Lab2.Circle;
+import Lab3.MyShape;
+import java.util.HashMap;
 import java.util.Scanner;
-
 public class Main {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
+        HashMap<MyShape, String> myHashMap = new HashMap<>();
+        Circle myCircle = new Circle(0, 0, 1);
+        Rectangle myRectangle = new Rectangle(0, 1, 1, 0);
+        Square mySquare = new Square(0, 1, 1);
 
-        System.out.println("Enter the top-left coordinates and side length of the square:");
-        int xTopLeftCoordinate = scanner.nextInt();
-        int yTopLeftCoordinate = scanner.nextInt();
-        int sideLength = scanner.nextInt();
+        myHashMap.put(myCircle, "CIRCLE");
+        myHashMap.put(myRectangle, "RECTANGLES");
+        myHashMap.put(mySquare, "SQUARES");
 
-        Square square = new Square(xTopLeftCoordinate, yTopLeftCoordinate, sideLength);
+        System.out.println("INITIAL - " + myHashMap.size() + " " + myHashMap.get(myCircle));
 
-        System.out.println("Площадь: " + square.getArea());
-        System.out.println("Периметр: " + square.getPerimeter());
-        System.out.println("Цвет: " + square.getColor());
-        System.out.println("Закрашен: " + square.isFilled());
-
-        System.out.println("Enter the new color:");
-        String newColor = scanner.next();
-        square.setColor(newColor);
-
-        System.out.println("Цвет: " + square.getColor());
+        Circle circleWithSameAttributes = new Circle(0, 0, 1);
+        myHashMap.put(circleWithSameAttributes, "SAME CIRCLES");
+        System.out.println("ADDED CIRCLE WITH SAME ATTRIBUTES - " + myHashMap.size() + " " + myHashMap.get(myCircle));
     }
-}
 
+}
 
 
 
