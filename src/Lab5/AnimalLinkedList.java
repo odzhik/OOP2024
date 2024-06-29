@@ -1,13 +1,15 @@
-package Lab6;
-import java.util.LinkedList;
+package Lab5;
+
 import Lab5.Animal;
 import Lab5.AnimalArrayList;
-import java.util.ArrayList;
 
+public class AnimalLinkedList {
+    public Node header;  // Ссылка на первый (фиктивный) узел
+    private int size;     // Размер списка
 
-public class AnimalLinkedList extends ArrayList<Animal> {
-    private class Node {
-        Animal element;
+    // Приватный внутренний класс Node
+    public class Node {
+        private Animal element;
         Node prev;
         Node next;
 
@@ -16,28 +18,35 @@ public class AnimalLinkedList extends ArrayList<Animal> {
             this.prev = prev;
             this.next = next;
         }
-    }
-    private int size;
-    private Node header;
 
+        // Public getter for element
+        public Animal getElement() {
+            return element;
+        }
+    }
+
+    // Дефолтный пустой конструктор
     public AnimalLinkedList() {
         header = new Node(null, null, null);
-        header.next = header;
         header.prev = header;
+        header.next = header;
         size = 0;
     }
 
-    private void add(Animal animal, Node node) {
-        Node newNode = new Node(animal, null, node);
-        newNode.prev.next = newNode;
-        newNode.next.prev = newNode;
+    // Метод для добавления нового элемента после указанного узла
+    public void add(Animal animal, Node node) {
+        Node newNode = new Node(animal, node, node.next);
+        node.next.prev = newNode;
+        node.next = newNode;
         size++;
-
     }
+
+    // Публичный метод для добавления нового элемента после header
     public void add(Animal animal) {
         add(animal, header);
     }
 
+    // Метод для добавления всех элементов из AnimalArrayList
     public void addAll(AnimalArrayList arrayList) {
         for (Animal animal : arrayList) {
             add(animal, header);
@@ -45,7 +54,7 @@ public class AnimalLinkedList extends ArrayList<Animal> {
     }
 
     // Метод для нахождения узла по индексу
-    private Node findNodeByIndex(int i) {
+    public Node findNodeByIndex(int i) {
         if (i < 0 || i >= size) {
             throw new IndexOutOfBoundsException("Index: " + i + ", Size: " + size);
         }
@@ -65,22 +74,10 @@ public class AnimalLinkedList extends ArrayList<Animal> {
     public void printList() {
         Node current = header.next;
         while (current != header) {
-            System.out.println(current.element.getName());
+            System.out.println(current.getElement().getName());
             current = current.next;
         }
     }
-
-    public static void main(String[] args) {
-        AnimalLinkedList list = new AnimalLinkedList();
-        list.add(new Animal("Dog"));
-        list.add(new Animal("Cat"));
-        list.add(new Animal("Cow"));
-
-        list.printList(); // Выводит: Dog, Cat, Cow
-        System.out.println("Size: " + list.getSize()); // Выводит: Size: 3
-
-        // Пример использования метода findNodeByIndex
-        Node node = list.findNodeByIndex(1);
-        System.out.println("Element at index 1: " + node.element.getName()); // Выводит: Element at index 1: Cat
-    }
 }
+
+

@@ -35,4 +35,28 @@ public class MyShape {
     public String toString() {
         return "MyShape{" + "color='" + color + '\'' + ", isFilled=" + filled + '}';
     }
+    public boolean equals(Object obj)
+    {
+        if(this == obj) {
+            return true;
+        }
+        if(obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        MyShape myShape = (MyShape) obj;
+        return color.equals(myShape.getColor()) && filled == myShape.isFilled();
+    }
+
+    public int hashCode() {
+        int result = 17;
+        if(color != null) {
+            result = 31 * result + color.hashCode();
+        }
+        if(filled) {
+            result = 37 * result;
+        }
+
+        return result;
+    }
 }

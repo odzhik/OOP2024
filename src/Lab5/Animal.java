@@ -12,7 +12,6 @@ public class Animal {
     }
 
     public void sound() {
-        // По умолчанию звук не определен
-        System.out.println("Unknown sound");
+        System.out.println("...");
     }
 }

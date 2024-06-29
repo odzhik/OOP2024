@@ -29,5 +29,12 @@ public class Square extends Rectangle {
         return "Square{" +
                 "sideLength=" + getSideLength() +
                 "} which is a subclass of " + super.toString();
+    }public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    public int hashCode() {
+        int result = super.hashCode();
+        return result;
     }
 }
