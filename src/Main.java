@@ -234,57 +234,101 @@ import Lab3.MyShape;
 //}
 //
 
-import Lab8.*;
+//import Lab8.*;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Country country1 = new Country("Kyrgyzstan");
+//        Country country2 = new Country("Kazakstan");
+//        Country country3 = new Country("China");
+//
+//        ResortPlace resort1 = new ResortPlace("Hotel1", "Bishkek");
+//        ResortPlace resort2 = new ResortPlace("Hotel2", "Bishkek");
+//        ResortPlace resort3 = new ResortPlace("Hotel3", "city3");
+//        ResortPlace resort4 = new ResortPlace("Hotel4", "Bishkek");
+//        ResortPlace resort5 = new ResortPlace("Hotel5", "City5");
+//
+//        for (int i = 1; i <= 5; i++) {
+//            resort1.addTourist(new Tourist("Tourist" + i, 100));
+//            resort2.addTourist(new Tourist("Tourist" + (i + 5), 200));
+//            resort3.addTourist(new Tourist("Tourist" + (i + 10),  300));
+//            resort4.addTourist(new Tourist("Tourist" + (i + 15), 400));
+//            resort5.addTourist(new Tourist("Tourist" + (i + 20), 500));
+//        }
+//
+//        country1.addResort(resort1);
+//        country1.addResort(resort2);
+//        country1.addResort(resort3);
+//        country1.addResort(resort4);
+//        country1.addResort(resort5);
+//
+//        country2.addResort(new ResortPlace("Hotel6", "Karaganda"));
+//        country2.addResort(new ResortPlace("Hotel7", "Almaty"));
+//        country2.addResort(new ResortPlace("Hotel8", "Astana"));
+//        country2.addResort(new ResortPlace("Hotel9", "Kostanay"));
+//        country2.addResort(new ResortPlace("Hotel10", "Zhezkazgan"));
+//
+//        country3.addResort(new ResortPlace("Hotel11", "Beijing"));
+//        country3.addResort(new ResortPlace("Hotel12", "Shanghai"));
+//        country3.addResort(new ResortPlace("Hotel13", "Pekin"));
+//        country3.addResort(new ResortPlace("Hotel14", "city4"));
+//        country3.addResort(new ResortPlace("Hotel15", "city5"));
+//
+//        Continent continent = new Continent("Asia");
+//        continent.addCountry(country1);
+//        continent.addCountry(country2);
+//        continent.addCountry(country3);
+//
+//        System.out.println("Total Income of All Countries in Continent: " + continent.getTotalIncomeOfAllResorts() );
+//
+//        Country mostProfitableCountry = continent.getTheMostProfitableCountry();
+//        System.out.println("Most Profitable Country: " + mostProfitableCountry.getName());
+//
+//        ResortPlace mostProfitableResort = mostProfitableCountry.getResortWithMaxIncome();
+//        System.out.println("Most Profitable Resort in Most Profitable Country: " + mostProfitableResort.getName());
+//    }
+//}
 
+
+
+import Lab10.*;
 public class Main {
     public static void main(String[] args) {
-        Country country1 = new Country("Kyrgyzstan");
-        Country country2 = new Country("Kazakstan");
-        Country country3 = new Country("China");
+        Battery[] toshibaBatteries = {
+                new ToshibaBattery(1.5, 2.0, 1000, 100),
+                new ToshibaBattery(1.5, 1.5, 900, 90),
+                new ToshibaBattery(1.8, 2.5, 800, 80),
+                new ToshibaBattery(1.6, 2.0, 700, 70),
+                new ToshibaBattery(1.4, 1.3, 600, 60)
+        };
 
-        ResortPlace resort1 = new ResortPlace("Hotel1", "Bishkek");
-        ResortPlace resort2 = new ResortPlace("Hotel2", "Bishkek");
-        ResortPlace resort3 = new ResortPlace("Hotel3", "city3");
-        ResortPlace resort4 = new ResortPlace("Hotel4", "Bishkek");
-        ResortPlace resort5 = new ResortPlace("Hotel5", "City5");
+        Battery[] duracellBatteries = {
+                new DuracellBattery(1.9, 1.8, 100, 1.3),
+                new DuracellBattery(1.7, 2.0, 1100, 1.3),
+                new DuracellBattery(1.5, 2.0, 1000, 1.6),
+                new DuracellBattery(1.3, 1.9, 900, 1.9),
+                new DuracellBattery(1.1, 2.1, 105, 1.2)
+        };
+        FlashLight[] flashLights = {
+                new FlashLight(toshibaBatteries),
+                new FlashLight(duracellBatteries),
+                new FlashLight(toshibaBatteries),
+                new FlashLight(duracellBatteries),
+                new FlashLight(toshibaBatteries)
+        };
 
-        for (int i = 1; i <= 5; i++) {
-            resort1.addTourist(new Tourist("Tourist" + i, 100));
-            resort2.addTourist(new Tourist("Tourist" + (i + 5), 200));
-            resort3.addTourist(new Tourist("Tourist" + (i + 10),  300));
-            resort4.addTourist(new Tourist("Tourist" + (i + 15), 400));
-            resort5.addTourist(new Tourist("Tourist" + (i + 20), 500));
+        for (int i = 0; i < flashLights.length; i++) {
+            System.out.println("Flashlight " + (i + 1) + " Lifetime: " + flashLights[i].getTotalLifeTime());
         }
 
-        country1.addResort(resort1);
-        country1.addResort(resort2);
-        country1.addResort(resort3);
-        country1.addResort(resort4);
-        country1.addResort(resort5);
+        FlashLight maxLifetimeFlashlight = flashLights[0];
+        for (int i = 1; i < flashLights.length; i++) {
+            if (flashLights[i].getTotalLifeTime() > maxLifetimeFlashlight.getTotalLifeTime()) {
+                maxLifetimeFlashlight = flashLights[i];
+            }
+        }
 
-        country2.addResort(new ResortPlace("Hotel6", "Karaganda"));
-        country2.addResort(new ResortPlace("Hotel7", "Almaty"));
-        country2.addResort(new ResortPlace("Hotel8", "Astana"));
-        country2.addResort(new ResortPlace("Hotel9", "Kostanay"));
-        country2.addResort(new ResortPlace("Hotel10", "Zhezkazgan"));
-
-        country3.addResort(new ResortPlace("Hotel11", "Beijing"));
-        country3.addResort(new ResortPlace("Hotel12", "Shanghai"));
-        country3.addResort(new ResortPlace("Hotel13", "Pekin"));
-        country3.addResort(new ResortPlace("Hotel14", "city4"));
-        country3.addResort(new ResortPlace("Hotel15", "city5"));
-
-        Continent continent = new Continent("Asia");
-        continent.addCountry(country1);
-        continent.addCountry(country2);
-        continent.addCountry(country3);
-
-        System.out.println("Total Income of All Countries in Continent: " + continent.getTotalIncomeOfAllResorts() );
-
-        Country mostProfitableCountry = continent.getTheMostProfitableCountry();
-        System.out.println("Most Profitable Country: " + mostProfitableCountry.getName());
-
-        ResortPlace mostProfitableResort = mostProfitableCountry.getResortWithMaxIncome();
-        System.out.println("Most Profitable Resort in Most Profitable Country: " + mostProfitableResort.getName());
+        System.out.println("\nFlashlight with Maximum Lifetime:");
+        System.out.println("Total Lifetime: " + maxLifetimeFlashlight.getTotalLifeTime());
     }
 }
