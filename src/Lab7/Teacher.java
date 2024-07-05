@@ -1,19 +1,13 @@
 package Lab7;
 
 public class Teacher extends Worker {
-    private double tiredness; // from 0.01 to 0.1
+    private double tiredness;
 
-    // Default constructor
-    public Teacher() {
-    }
-
-    // Parameterized constructor
     public Teacher(String fullName, double energy, double power, double efficiency, double tiredness) {
         super(fullName, energy, power, efficiency);
         this.tiredness = tiredness;
     }
 
-    // Getters and Setters
     public double getTiredness() {
         return tiredness;
     }
@@ -42,15 +36,15 @@ public class Teacher extends Worker {
             if (getEnergy() <= 0) {
                 break;
             }
-            double workDone = (getPower() * 1) * currentEfficiency; // work done in 1 hour
+            double workDone = (getPower() * 1) * currentEfficiency; //
             if (getEnergy() < workDone) {
-                workDone = getEnergy(); // adjust work done if energy is insufficient
+                workDone = getEnergy(); //
             }
             setEnergy(getEnergy() - workDone);
             totalWork += workDone;
-            currentEfficiency -= tiredness; // decrease efficiency by tiredness
+            currentEfficiency -= tiredness; //
             if (currentEfficiency < 0) {
-                currentEfficiency = 0; // efficiency can't be negative
+                currentEfficiency = 0; //
             }
         }
         return totalWork;

@@ -2,15 +2,10 @@ package Lab7;
 
 public class Worker {
     private String fullName;
-    private double energy; // in kilojoules - KJ
-    private double power; // in kilowatts - KW
-    private double efficiency; // efficiency coefficient, from 0.1 to 0.4
+    private double energy;
+    private double power;
+    private double efficiency;
 
-    // Default constructor
-    public Worker() {
-    }
-
-    // Parameterized constructor
     public Worker(String fullName, double energy, double power, double efficiency) {
         this.fullName = fullName;
         this.energy = energy;
@@ -68,9 +63,9 @@ public class Worker {
             if (energy <= 0) {
                 break;
             }
-            double workDone = (power * 1) * efficiency; // work done in 1 hour
+            double workDone = (power * 1) * efficiency; // w in 1 h
             if (energy < workDone) {
-                workDone = energy; // adjust work done if energy is insufficient
+                workDone = energy;
             }
             energy -= workDone;
             totalWork += workDone;

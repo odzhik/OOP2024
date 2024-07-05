@@ -100,34 +100,10 @@ import Lab3.Square;
 import Lab2.Rectangle;
 import Lab2.Circle;
 import Lab3.MyShape;
-import java.util.HashMap;
-import java.util.Scanner;
-//public class Main {
 
-//    public static void main(String[] args) {
-//        Scanner input = new Scanner(System.in);
-//        HashMap<MyShape, String> myHashMap = new HashMap<>();
-//        Circle myCircle = new Circle(0, 0, 1);
-//        Rectangle myRectangle = new Rectangle(0, 1, 1, 0);
-//        Square mySquare = new Square(0, 1, 1);
-//
-//        myHashMap.put(myCircle, "CIRCLE");
-//        myHashMap.put(myRectangle, "RECTANGLES");
-//        myHashMap.put(mySquare, "SQUARES");
-//
-//        System.out.println("INITIAL - " + myHashMap.size() + " " + myHashMap.get(myCircle));
-//
-//        Circle circleWithSameAttributes = new Circle(0, 0, 2);
-//        myHashMap.put(circleWithSameAttributes, "SAME CIRCLES");
-//        System.out.println("ADDED CIRCLE WITH SAME ATTRIBUTES - " + myHashMap.size() + " " + myHashMap.get(myCircle));
-//    }
-//
-//}
 
-// Lab5
-
-import Lab5.*;
-
+//import Lab5.*;
+//
 //public class Main {
 //    public static void main(String[] args) {
 //        AnimalArrayList animalArrayList = new AnimalArrayList();
@@ -151,11 +127,11 @@ import Lab5.*;
 //        animalArrayList.clear();
 //    }
 //}
+
+
+
+//import Lab5.*;
 //
-
-
-// lab 6
-
 //public class Main {
 //    public static void main(String[] args) {
 //        AnimalLinkedList list = new AnimalLinkedList();
@@ -166,7 +142,7 @@ import Lab5.*;
 //        System.out.println("Size: " + list.getSize());
 //
 //        AnimalLinkedList.Node node = list.findNodeByIndex(1);
-//        System.out.println("Element at index 1: " + node.getElement().getName()); // Выводит: Element at index 1: Cat
+//        System.out.println("Element at index 1: " + node.getElement().getName());
 //
 //        AnimalArrayList arrayList = new AnimalArrayList();
 //
@@ -176,49 +152,139 @@ import Lab5.*;
 //    }
 //}
 
-import java.util.Arrays;
-import Lab7.Worker;
-import Lab7.Programmer;
-import Lab7.Teacher;
+//import java.util.Arrays;
+//import Lab7.Worker;
+//import Lab7.Programmer;
+//import Lab7.Teacher;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Worker[] workers = new Worker[10];
+//        workers[0] = new Programmer("Artoty", 5000, 100, 0.4, 1.5);
+//        workers[1] = new Programmer("Yergen", 4500, 90, 0.35, 1.2);
+//        workers[2] = new Programmer("Biba", 6000, 110, 0.3, 1.8);
+//        workers[3] = new Programmer("Emir", 5200, 95, 0.32, 1.6);
+//        workers[4] = new Programmer("Baqbergen", 4800, 105, 0.33, 1.7);
+//        workers[5] = new Teacher("Yerbol", 4000, 80, 0.3, 0.05);
+//        workers[6] = new Teacher("Danil", 4200, 85, 0.25, 0.04);
+//        workers[7] = new Teacher("Madi", 3800, 120, 0.9, 0.03);
+//        workers[8] = new Teacher("Karim", 4100, 82, 0.28, 0.06);
+//        workers[9] = new Teacher("Olzhas", 3900, 78, 0.27, 0.05);
+//
+//
+//        double totalWork5Hours = 0;
+//        double totalWork10Hours = 0;
+//
+//        for (Worker worker : workers) {
+//            totalWork5Hours += worker.toWork(5);
+//            totalWork10Hours += worker.toWork(10);
+//        }
+//
+//
+//        System.out.println("Total work done by all workers in 5 hours: " + totalWork5Hours + " KJ");
+//        System.out.println("Total work done by all workers in 10 hours: " + totalWork10Hours + " KJ");
+//
+//        System.out.println("Total work done by each worker in 10 hours:");
+//        for (Worker worker : workers) {
+//            System.out.println(worker.getFullName() + ": " + worker.toWork(10) + " KJ");
+//        }
+//
+//        Worker maxPowerWorker = null;
+//        double maxPower = Double.MIN_VALUE;
+//
+//        for (Worker worker : workers) {
+//            if (worker.getPower() > maxPower) {
+//                maxPower = worker.getPower();
+//                maxPowerWorker = worker;
+//            }
+//        }
+//
+//        if (maxPowerWorker != null) {
+//            System.out.println("Worker with maximum power: " + maxPowerWorker.getFullName());
+//        }
+//
+//        Worker maxWorkDoneWorker = null;
+//        double maxWorkDone = Double.MIN_VALUE;
+//
+//        for (Worker worker : workers) {
+//            double workDone = worker.toWork(10);
+//            if (workDone > maxWorkDone) {
+//                maxWorkDone = workDone;
+//                maxWorkDoneWorker = worker;
+//            }
+//        }
+//
+//        if (maxWorkDoneWorker != null) {
+//            System.out.println("Worker with maximum work done in 10 hours: " + maxWorkDoneWorker.getFullName());
+//        }
+//        Worker leastEfficientWorker = null;
+//        double minWorkDone = Double.MAX_VALUE;
+//        for (Worker worker : workers) {
+//            double workDone = worker.toWork(10);
+//            if (workDone < minWorkDone) {
+//                minWorkDone = workDone;
+//                leastEfficientWorker = worker;
+//            }
+//        }
+//        if (leastEfficientWorker != null) {
+//            System.out.println( leastEfficientWorker.getFullName());
+//
+//        }
+//    }
+//}
+//
+
+import Lab8.*;
 
 public class Main {
     public static void main(String[] args) {
-        Worker[] workers = new Worker[10];
-        workers[0] = new Programmer("Alice", 5000, 100, 0.4, 1.5);
-        workers[1] = new Programmer("Bob", 4500, 90, 0.35, 1.2);
-        workers[2] = new Programmer("Charlie", 6000, 110, 0.3, 1.8);
-        workers[3] = new Programmer("David", 5200, 95, 0.32, 1.6);
-        workers[4] = new Programmer("Eve", 4800, 105, 0.33, 1.7);
-        workers[5] = new Teacher("Frank", 4000, 80, 0.3, 0.05);
-        workers[6] = new Teacher("Grace", 4200, 85, 0.25, 0.04);
-        workers[7] = new Teacher("Hank", 3800, 75, 0.35, 0.03);
-        workers[8] = new Teacher("Ivy", 4100, 82, 0.28, 0.06);
-        workers[9] = new Teacher("Jack", 3900, 78, 0.27, 0.05);
+        Country country1 = new Country("Kyrgyzstan");
+        Country country2 = new Country("Kazakstan");
+        Country country3 = new Country("China");
 
-        // Calculate the total work done by all workers in 5 hours
-        double totalWork5Hours = Arrays.stream(workers).mapToDouble(worker -> worker.toWork(5)).sum();
-        System.out.println("Total work done by all workers in 5 hours: " + totalWork5Hours + " KJ");
+        ResortPlace resort1 = new ResortPlace("Hotel1", "Bishkek");
+        ResortPlace resort2 = new ResortPlace("Hotel2", "Bishkek");
+        ResortPlace resort3 = new ResortPlace("Hotel3", "city3");
+        ResortPlace resort4 = new ResortPlace("Hotel4", "Bishkek");
+        ResortPlace resort5 = new ResortPlace("Hotel5", "City5");
 
-        // Calculate the total work done by all workers in 10 hours
-        double totalWork10Hours = Arrays.stream(workers).mapToDouble(worker -> worker.toWork(10)).sum();
-        System.out.println("Total work done by all workers in 10 hours: " + totalWork10Hours + " KJ");
-
-        // Print total work done by each worker in 10 hours
-        System.out.println("Total work done by each worker in 10 hours:");
-        Arrays.stream(workers).forEach(worker -> {
-            System.out.println(worker.getFullName() + ": " + worker.toWork(10) + " KJ");
-        });
-
-        // Find the worker with the maximum power
-        Worker maxPowerWorker = Arrays.stream(workers).max((w1, w2) -> Double.compare(w1.getPower(), w2.getPower())).orElse(null);
-        if (maxPowerWorker != null) {
-            System.out.println("Worker with maximum power: " + maxPowerWorker);
+        for (int i = 1; i <= 5; i++) {
+            resort1.addTourist(new Tourist("Tourist" + i, 100));
+            resort2.addTourist(new Tourist("Tourist" + (i + 5), 200));
+            resort3.addTourist(new Tourist("Tourist" + (i + 10),  300));
+            resort4.addTourist(new Tourist("Tourist" + (i + 15), 400));
+            resort5.addTourist(new Tourist("Tourist" + (i + 20), 500));
         }
 
-        // Find the worker with the maximum work done in 10 hours
-        Worker maxWorkDoneWorker = Arrays.stream(workers).max((w1, w2) -> Double.compare(w1.toWork(10), w2.toWork(10))).orElse(null);
-        if (maxWorkDoneWorker != null) {
-            System.out.println("Worker with maximum work done in 10 hours: " + maxWorkDoneWorker);
-        }
+        country1.addResort(resort1);
+        country1.addResort(resort2);
+        country1.addResort(resort3);
+        country1.addResort(resort4);
+        country1.addResort(resort5);
+
+        country2.addResort(new ResortPlace("Hotel6", "Karaganda"));
+        country2.addResort(new ResortPlace("Hotel7", "Almaty"));
+        country2.addResort(new ResortPlace("Hotel8", "Astana"));
+        country2.addResort(new ResortPlace("Hotel9", "Kostanay"));
+        country2.addResort(new ResortPlace("Hotel10", "Zhezkazgan"));
+
+        country3.addResort(new ResortPlace("Hotel11", "Beijing"));
+        country3.addResort(new ResortPlace("Hotel12", "Shanghai"));
+        country3.addResort(new ResortPlace("Hotel13", "Pekin"));
+        country3.addResort(new ResortPlace("Hotel14", "city4"));
+        country3.addResort(new ResortPlace("Hotel15", "city5"));
+
+        Continent continent = new Continent("Asia");
+        continent.addCountry(country1);
+        continent.addCountry(country2);
+        continent.addCountry(country3);
+
+        System.out.println("Total Income of All Countries in Continent: " + continent.getTotalIncomeOfAllResorts() );
+
+        Country mostProfitableCountry = continent.getTheMostProfitableCountry();
+        System.out.println("Most Profitable Country: " + mostProfitableCountry.getName());
+
+        ResortPlace mostProfitableResort = mostProfitableCountry.getResortWithMaxIncome();
+        System.out.println("Most Profitable Resort in Most Profitable Country: " + mostProfitableResort.getName());
     }
 }
